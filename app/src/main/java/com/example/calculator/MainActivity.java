@@ -282,7 +282,7 @@ public class MainActivity extends AppCompatActivity {
                             iNum=valueOfADouble(ar.get(i-1));
                         } else if(i-2>=0 && isAMode(ar.get(i-2)) && ar.get(i-2).equals("*")) {
                             iNum=lastRes;
-                            if(commonAr.size()>0 && String.valueOf(lastRes)==commonAr.get(commonAr.size()-1)) {
+                            if(commonAr.size()>0 && String.valueOf(lastRes).equals(commonAr.get(commonAr.size()-1))) {
                                 commonAr.remove(commonAr.size()-1);
                                 if(i<ar.size()-1 && isAMode(ar.get(i)) && ar.get(i).equals("*")) {
                                     lastRes=iNum*valueOfADouble(ar.get(i+1));
@@ -299,7 +299,7 @@ public class MainActivity extends AppCompatActivity {
                     if(i<ar.size() && ar.get(i-1).equals("*")) {
                         iNum=lastRes*valueOfADouble(ar.get(i));
                         i_iNum=i;
-                        if(commonAr.size()!=0 && commonAr.get(commonAr.size()-1)==String.valueOf(lastRes)) {
+                        if(commonAr.size()!=0 && String.valueOf(lastRes).equals(commonAr.get(commonAr.size()-1))) {
                             if(i<ar.size()-1 && i-3>=0 && isAMode(ar.get(i-3)) && ar.get(i-3).equals("*")) {
                                 commonAr.remove(commonAr.size() - 1);
                             }
